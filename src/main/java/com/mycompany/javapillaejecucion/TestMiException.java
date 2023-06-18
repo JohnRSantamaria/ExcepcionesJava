@@ -10,13 +10,23 @@ package com.mycompany.javapillaejecucion;
  * @author ResetStoreX
  */
 public class TestMiException {
-    public static void main(String[] args)  {
+    public static void main(String[] args) throws  Exception  {
+        
+        /*
         Cuenta cuenta = new Cuenta();
         try {
             cuenta.deposita();
         } catch (MiExcepcion ex) {
            ex.printStackTrace();
         }
+        */
+        
+        try (Conexion con = new Conexion()){
+                con.leerDatos();
+        } catch (IllegalAccessException ex) {
+            ex.printStackTrace();
+        }
+        
     }
           
 }
